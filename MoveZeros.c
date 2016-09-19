@@ -1,10 +1,10 @@
 //Move Zeros
+#efine sizeNum 10
 #include<stdio.h>
 void main()
 {
-    int a[5]={1,0,5,1,4};
+    int a[sizeNum]={1,0,5,1,4,3,0,2,0,10};
     int sizeNum,i;
-    sizeNum=5;
     MoveZeros(a,sizeNum);
     return 0;
 
