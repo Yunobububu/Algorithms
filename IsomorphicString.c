@@ -16,7 +16,7 @@
     }
 IsomorphicString(char *s1,char *s2)
 {
-    int n1,n2,i,k;
+    int n1,n2,i;
     char m1[256]={0};
     char m2[256]={0};
     n1=strlen(s1);
