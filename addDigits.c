@@ -10,9 +10,8 @@ void main()
 }
 int addDigits(int n)
 {
-    while(n>10)
-        {
-            n=n/10+n%10;
-        }
-    return n;
+    if(n==0)
+        return 0;
+    else
+        return (n-1)%9+1;
 }
