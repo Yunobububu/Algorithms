@@ -1,0 +1,7 @@
+for i <- 1 to length[A]
+  do j <- A[i]
+  while j != v
+    do i <- i+1
+if i > length[A]
+    return NIL
+    else return i

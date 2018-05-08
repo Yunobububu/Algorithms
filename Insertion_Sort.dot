@@ -1,0 +1,45 @@
+digraph Insertion_Sort{
+  //{||||}上下排列,|||||左右排列
+  bgcolor="#FFE4C4"
+
+  {
+    node[shape="circle",style="filled",color="violetred",fontsize="15",style="invis"]
+
+    mark[label="1",width = 0.01,height=0.01]
+    mark1[label="2",width = 0.01,height=0.01]
+    mark2[label="3",width = 0.01,height=0.01]
+    mark3[label="4",width = 0.01,height=0.01]
+    mark4[label="5",width = 0.01,height=0.01]
+
+  }
+  {
+    node[style="filled",color="",height=0.5]
+    Array[shape="record",label="<f0>①|<f1>31|<f2>41|<f3>59|<f4>26|<f5>41|<f6>58"]
+    Array1[shape="record",label="<f0>②|<f1>31|<f2>41|<f3>59|<f4>26|<f5>41|<f6>58"]
+    Array2[shape="record",label="<f0>③|<f1>26|<f2>31|<f3>41|<f4>59|<f5>41|<f6>58"]
+    Array3[shape="record",label="<f0>④|<f1>26|<f2>31|<f3>41|<f4>41|<f5>59|<f6>58"]
+    Array4[shape="record",label="<f0>⑤|<f1>26|<f2>31|<f3>41|<f4>41|<f5>58|<f6>59"]
+    Array -> Array1 -> Array2 -> Array3 -> Array4[style=invis]
+  }
+  {rank=same;Array,mark}
+  {rank=same;Array1,mark1}
+  {rank=same;Array2,mark2}
+  {rank=same;Array3,mark3}
+  {rank=same;Array4,mark4}
+
+  {
+    Array:f2 -> Array:f2[color="red",style="dashed"]
+    Array1:f3 -> Array1:f3[color="red",style="dashed"]
+    Array2:f3 -> Array2:f4
+    Array2:f2 -> Array2:f3
+    Array2:f4 -> Array2:f1[color="red",style="dashed"]
+    Array2:f1 -> Array2:f2
+    Array3:f4 -> Array3:f5
+    Array3:f4 -> Array3:f5[dir=back,color="red",style="dashed"]
+    Array4:f6 -> Array4:f5:n[color="red",style="dashed"]
+    Array4:f5 -> Array4:f6
+  }
+  title[label="Exercise 2.1-1",shape="plaintext",fontsize="20"]
+  Array4 -> title[style=invis]
+
+}
