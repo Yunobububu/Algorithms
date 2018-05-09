@@ -4,10 +4,10 @@
 void min_heapfiy(int *arr,int index,int length);
 void build_heap(int *arr,int length);
 void exchange(int *src,int *dest);
-
+void min_heap_sort(int *arr,int length);
 int main(){
   int arr[] = {30,2,43,89,10,38};
-  build_heap(arr,N);
+  min_heap_sort(arr,N);
   for(int i = 0;i < N;i++){
     printf("%d ",arr[i]);
   }
@@ -31,6 +31,15 @@ void min_heapfiy(int *arr,int index,int length){
 void build_heap(int *arr,int length){
   for(int i = length/2 - 1; i >= 0;i--){
     min_heapfiy(arr,i,length);
+  }
+}
+void min_heap_sort(int *arr,int length){
+  build_heap(arr,length);
+  int varlength = length;
+  for(int i = varlength - 1; i > 0;i-- ){
+    exchange(&arr[varlength - 1],&arr[0]);
+    varlength--;
+    min_heapfiy(arr,0,varlength);
   }
 }
 void exchange(int *src,int *dest){
