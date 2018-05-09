@@ -29,7 +29,7 @@ void min_heapfiy(int *arr,int index,int length){
   }
 }
 void build_heap(int *arr,int length){
-  for(int i = length/2 - 1; i >= 0;i++){
+  for(int i = length/2 - 1; i >= 0;i--){
     min_heapfiy(arr,i,length);
   }
 }
